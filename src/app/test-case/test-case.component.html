@@ -1,0 +1,63 @@
+<div style="padding:24px">
+  <a [routerLink]="['/project']">返回</a>
+  <a style="margin-left:10px" (click)="onAdd()">新增</a>
+  <h1 style="text-align:center">「{{projectName}}」 测试案例库</h1>
+
+  <nz-table [nzData]="testCaseList">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>优先级</th>
+        <th>作者</th>
+        <th>标题</th>
+        <th>测试结果</th>
+        <th>状态</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of testCaseList">
+        <td>{{ data.id }}</td>
+        <td>{{ data.priority.name }}</td>
+        <td>{{ data.author.name }}</td>
+        <td>{{ data.subject }}</td>
+        <td>{{ data.custom_fields[2].value }}</td>
+        <td>{{ data.status.name }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+
+
+<nz-modal [nzStyle]="{ top: '20px' }" [(nzVisible)]="addModalVisible" nzTitle="测试案例新增" nzWidth="90%" [nzFooter]="footer">
+
+  <div>标题：</div>
+  <input placeholder="请输入标题"  nz-input [(ngModel)]="subject" />
+  <div style="margin-top: 10px;">前置条件：</div>
+  <textarea placeholder="请输入前置条件"  rows="4" nz-input [(ngModel)]="condition"></textarea>
+
+  <div style="margin-top: 10px;">测试步骤： <a style="text-align: right;" (click)="addStep()">添加</a></div>
+  <ng-container *ngFor="let item of steps; let i = index">
+    <div nz-row>
+      <div nz-col nzSpan="12"  style="display:inline-block" >
+          <div class="step-index" style="width: 25px;">{{i+1}}</div>
+          <input nzSize="small" style="width: calc(100% - 25px);border-radius: 0 !important;"  placeholder="操作步骤"  nz-input [(ngModel)]="item.step" />
+      </div>
+      <div nz-col nzSpan="12"  style="display:inline-block">
+        <input nzSize="small" placeholder="预期结果" style="width: calc(100% - 120px);border-radius: 0 !important;" nz-input [(ngModel)]="item.result" />
+        <div class="step-index" style="width: 120px;">
+          <i nz-icon nzType="plus" nzTheme="outline" style="margin-right:15px"></i>
+          <i nz-icon nzType="plus-square" nzTheme="outline" style="margin-right:15px"></i>
+          <i nz-icon nzType="drag" nzTheme="outline" style="margin-right:15px"></i>
+          <i nz-icon nzType="close" nzTheme="outline"></i>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+<ng-template #footer>
+  <button nz-button nzType="danger">创建BUG</button>
+  <button nz-button nzType="primary" (click)="handleAddTestCase()">保存</button>
+  <button nz-button (click)="addModalVisible=false">取消</button>
+</ng-template>
+  <!-- <div contenteditable="true" style="overflow-y:auto;">aa</div> -->
+</nz-modal>

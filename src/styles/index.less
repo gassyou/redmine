@@ -1,0 +1,351 @@
+// 建议所有项目自定义样式放在该文件夹下
+@primary-color: rgb(68, 118, 101);
+@primary-1: tint(@primary-color, 90%); // replace tint(@primary-color, 90%)
+
+.nowrap {
+  white-space: nowrap
+}
+
+.wrap {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.fill-full {
+  width: 100%;
+}
+
+// 对应alain7.0和antd7.0👇
+.ant-btn__block {
+  display: block !important;
+  width: 100%;
+}
+
+.alain-default__content nz-input-group {
+  width: 100% !important;
+}
+
+.ant-input-search.ant-input-search-enter-button > .ant-input-suffix {
+  right: 0px;
+}
+
+.ant-card {
+  margin-bottom: 16px !important;
+}
+
+body, .scrollbar, .ant-dialog-wrap, .ant-drawer-body, .ant-drawer-wrapper-body, textarea.ant-input::-webkit-scrollbar-track {
+  box-shadow: unset !important;
+  width: unset !important;
+}
+
+.ant-drawer-body, .ant-drawer-wrapper-body {
+  background-color: unset !important;
+}
+
+body, .scrollbar, .ant-dialog-wrap, .ant-drawer-body, .ant-drawer-wrapper-body, textarea.ant-input::-webkit-scrollbar-thumb {
+  outline: unset !important;
+}
+
+.ant-btn + .ant-btn, .ant-btn + nz-button-group, .ant-btn + nz-dropdown {
+  display: inline-block;
+}
+
+// 对应alain7.0和antd7.0👆
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 8px;
+  border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 8px;
+  border-radius: 6px;
+  background: @primary-color;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #e4e7ec;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.search-input {
+  width: 400px;
+}
+
+.submenu-left {
+  -moz-padding-start: 8px;
+  -webkit-padding-start: 8px;
+}
+
+.pb-btn-md {
+  text-align: center;
+  padding: 16px;
+  background-color: white;
+}
+
+// table th,td
+.ant-table-fixed-header > .ant-table-content > .ant-table-scroll > .ant-table-body {
+  min-height: calc(~"100vh - 460px");
+  max-height: 260px !important;
+  border-top: 0;
+  overflow:auto !important;
+}
+
+.ant-table-fixed-header .ant-table-scroll .ant-table-header {
+  overflow: auto;
+  border-bottom: 0;
+}
+
+
+.ant-table-header::-webkit-scrollbar-track {
+  box-shadow: none;
+  //border-bottom: 1px solid #e8e8e8;
+}
+
+.ant-table-placeholder {
+  display: none !important;
+}
+
+.ant-table-thead > tr > th {
+  padding: 10px !important;
+}
+
+.ant-table-tbody > tr > td {
+  padding: 2px 12px 2px 12px !important;
+  height: 32px;
+}
+
+.ant-table-column-sorter-up:after, .ant-table-column-sorter-down:after {
+  height: 16px;
+}
+
+.ad-rt .ant-tabs-nav .ant-tabs-tab .name {
+  display: inline-block;
+  padding: 4px 20px;
+}
+
+.ad-rt .ant-tabs-nav .ant-tabs-tab .op {
+  top: 8px;
+}
+
+.ant-btn + nz-popconfirm {
+  margin-left: 0 !important;
+}
+
+.ant-btn-sm {
+  padding: 0 6px !important;
+  font-size: 12px;
+  border-radius: 4px;
+  height: 25px !important;
+}
+
+.ant-btn-icon-only.ant-btn-sm {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.form-item-search {
+  margin-bottom: 8px;
+}
+
+.ant-btn-icon-only + .ant-btn-icon-only {
+  margin-left: 0 !important;
+}
+
+.mb-zero {
+  margin-bottom: 0 !important;
+}
+
+// 去除tab画面右边控件的高度
+.ant-tabs-extra-content {
+  line-height: unset !important;
+}
+
+.alain-default .page-header {
+  margin-bottom: 12px !important;
+}
+
+.search-content {
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+// 画面Viewer部分顶层容器
+.table-content {
+  background: #fff;
+  padding: 24px;
+  min-height: calc(~"100vh - 280px") !important;
+  display: flow-root;
+}
+
+// 画面Viewer部分顶层容器
+.content {
+  background: #fff;
+  padding: 24px;
+  min-height: calc(~"100vh - 153px") !important;
+}
+
+// tab页面内边距
+.tab-content {
+  padding: 0 8px 0 8px;
+}
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  height: 56px;
+  line-height: 56px;
+  -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, .03);
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, .03);
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+  padding: 0 24px;
+  z-index: 9;
+}
+
+.dropdown {
+  display: inline-block !important;
+}
+
+.lb-sm {
+  border-left: 3px solid @primary-color;
+}
+
+.ant-upload-list-item-name {
+  width: auto
+}
+
+@media print {
+  .no-break {
+    page-break-inside: avoid;
+  }
+}
+
+.www-addr {
+  cursor: pointer;
+  line-height: 32px;
+  height: 32px;
+  font-weight: bolder;
+  font-size: 14px;
+  color: @primary-color;
+}
+
+// 高级检索表单项目下边距
+//.ant-modal-body .ant-form-item {
+//  margin-bottom: 8px !important;
+//}
+
+.theme-color {
+  color: @primary-color;
+}
+
+.category {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.long-btn {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+.link {
+  color: @primary-color;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-no-line {
+  color: @primary-color;
+  cursor: pointer;
+}
+
+.ant-input-affix-wrapper .ant-input-suffix .ant-btn {
+  padding: 0 8px;
+}
+
+.ant-tree li ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: table;
+  width: 100%;
+}
+
+.ant-tree-select li ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: table;
+  width: 100%;
+}
+
+.alain-default__content {
+  margin: 12px;
+  transform: translate3d(0, 0, 0);
+  min-height: calc(~"100vh - 100px");
+}
+
+.ant-select {
+  width: 100%;
+}
+
+.search-main {
+  display: flex;
+}
+
+.search-form {
+  width: calc(~"100% - 136px");
+  padding-top: 12px;
+}
+
+.search-operation {
+  width: 136px;
+  float: right;
+  background-color: #fafafa;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.global-footer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 20px;
+}
+
+.ant-calendar-picker {
+  width: 100%;
+}
+
+.ant-input-number {
+  width: 100%;
+}
+
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

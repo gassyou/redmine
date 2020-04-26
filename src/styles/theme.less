@@ -1,0 +1,25 @@
+// -------- 引入官方提供的 less 样式入口文件 -----------
+// @import '../../node_modules/ng-zorro-antd/src/style/themes/default.less';
+@import "../../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+// -------- 自定义参数覆盖 -----------
+@icon-url               : "/assets/fonts/iconfont";
+@alain-default-aside-wd: 160px;
+@font-size-base: 12px;
+@font-family: BlinkMacSystemFont,"Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@alain-default-header-hg: 50px;
+@alain-default-aside-nav-fs: 14px;
+@alain-default-aside-collapsed-nav-fs: 18px;
+//@primary-color: #a4080b;
+@body-background : #f5f7fa;
+// Desktop
+@media (min-width: @screen-md-min) {
+  .alain-default__content {
+    margin-left: (@alain-default-aside-wd + 12);
+    margin-right: 12px;
+  }
+
+  .alain-default__collapsed .alain-default__content {
+    margin-left: 76px;
+  }
+}

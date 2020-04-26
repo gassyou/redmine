@@ -1,0 +1,20 @@
+<div style="padding:24px">
+  <h1 style="margin-bottom:24px;text-align: center">宁波乐科科项目列表</h1>
+  <h3></h3>
+  <nz-list [nzDataSource]="projectList" [nzRenderItem]="item" [nzItemLayout]="'horizontal'" [nzLoading]="loading" nzBordered>
+    <ng-template #item let-item>
+      <nz-list-item>
+        <nz-list-item-meta
+          [nzTitle]="item.name"
+          [nzDescription]="desc"
+        >
+          <ng-template #desc>
+            <div>{{item.description}}</div>
+            <a (click)="toTestCase(item)">测试案例管理</a>
+          </ng-template>
+
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+  </div>
